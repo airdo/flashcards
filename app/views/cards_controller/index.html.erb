@@ -1,0 +1,14 @@
+
+<div class="container">
+  <div class=" row">
+  	<% @cards.each { |card|  %>
+    <div class="card col-xs-4">
+      <img src='<%=  %>'>
+      <h2> <%= card.original_text %> </h2>
+      <h4> <%= card.translated_text %> </h2>
+      <p><%= card.review_date %></p>
+      <%= link_to 'Delete', cards_controller_url(card.id), :method => :delete %>
+    </div>
+	 <% } %>
+  </div>
+</div>
