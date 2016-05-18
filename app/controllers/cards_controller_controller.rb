@@ -6,4 +6,7 @@ class CardsControllerController < ApplicationController
 		}.join("<hr>")
 	end
 
+	def new
+		render text "BOY"
+	end
 end
