@@ -3,16 +3,34 @@ class CardsControllerController < ApplicationController
 		@cards = Card.all
 	end
 
-	 def new
-	 	@card = Card.new
-	 end
-	 
-	 def create
-	 	@card = Card.create(card_params)
+	def show
+		@card = Card.find(params[:id])
+	end
 
-	 	@card.save
-	 	redirect_to url:cards_controller_index_url
-	 end
+	def new
+		@card = Card.new
+	end
+
+	def create
+		@card = Card.create(card_params)
+
+		@card.save
+		redirect_to url:cards_controller_index_url
+	end
+
+	def edit
+		@card = Card.find(params[:id])
+	end
+
+	def update
+		@card = Card.find(params[:id])
+
+		if @card.update(card_params)
+			redirect_to cards_controller_path
+		else
+			render 'edit'
+		end
+	end
 
 	 def destroy
 	 	@card = Card.find(params[:id])
@@ -24,7 +42,7 @@ class CardsControllerController < ApplicationController
 
 	 private
 	 def card_params
-	 	params.require(:cards_controller).permit(:translated_text,:original_text)
+	 	params.require(:card).permit(:translated_text,:original_text)
 	 end
 
 

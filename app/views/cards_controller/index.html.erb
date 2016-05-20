@@ -2,13 +2,19 @@
 <div class="container">
   <div class=" row">
   	<% @cards.each { |card|  %>
-    <div class="card col-xs-4">
-      <img src='<%=  %>'>
+    <a href='<%= cards_controller_url(card.id) %>'>
+    <div class="card col-xs-4 text-center">
       <h2> <%= card.original_text %> </h2>
       <h4> <%= card.translated_text %> </h2>
       <p><%= card.review_date %></p>
-      <%= link_to 'Delete', cards_controller_url(card.id), :method => :delete %>
-    </div>
+      <div class="row">
+      <br>
+        <div class="col-sm-6"><%= link_to 'Delete', cards_controller_url(card.id), :method => :delete %></div>
+        <div class="col-sm-6"><%= link_to 'Edit', edit_cards_controller_path(card.id) %></div>
+      </div>
+    </div></a>
 	 <% } %>
   </div>
 </div>
+
+

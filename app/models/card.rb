@@ -1,9 +1,12 @@
 class Card < ActiveRecord::Base
+	require 'date'
+
 	before_validation :add_review_date
 	validates :translated_text, :original_text, :review_date, presence: true
 
 	def add_review_date
-		self.review_date = Time.now.strftime("%d/%m/%Y")
+		self.review_date = (Date.today+3).to_s
+		# Time.now.strftime("%d+3/%m/%Y")
 	end
 
 	def text_not_equal_translation

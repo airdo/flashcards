@@ -1,6 +1,6 @@
 <div class="container">
 <h2>New Card</h2>
-<%= form_for :cards_controller, url: cards_controller_index_path do |card| %>
+<%= form_for :card, url: cards_controller_index_path do |card| %>
   <p>
     <%= card.label :original_text %><br>
     <%= card.text_area :original_text %>
