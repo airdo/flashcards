@@ -3,7 +3,7 @@
   <div class=" row">
   	<% @cards.each { |card|  %>
     <a href='<%= cards_controller_url(card.id) %>'>
-    <div class="card col-xs-4 text-center">
+    <div class="cards col-xs-4 text-center">
       <h2> <%= card.original_text %> </h2>
       <h4> <%= card.translated_text %> </h2>
       <p><%= card.review_date %></p>
