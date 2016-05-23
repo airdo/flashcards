@@ -15,7 +15,7 @@ class CardsControllerController < ApplicationController
 		@card = Card.create(card_params)
 
 		@card.save
-		redirect_to url:cards_controller_index_url
+		redirect_to cards_controller_index_url
 	end
 
 	def edit
