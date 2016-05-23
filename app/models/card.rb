@@ -6,7 +6,7 @@ class Card < ActiveRecord::Base
 
 	def add_review_date
 		if review_date.nil?
-			self.review_date = (Date.today+3).to_s
+			self.review_date = 3.days.from_now
 		end
 		# Time.now.strftime("%d+3/%m/%Y")
 	end
