@@ -13,7 +13,6 @@ class CardsControllerController < ApplicationController
 
 	def create
 		@card = Card.create(card_params)
-
 		@card.save
 		redirect_to cards_controller_index_url
 	end
@@ -44,7 +43,4 @@ class CardsControllerController < ApplicationController
 	 def card_params
 	 	params.require(:card).permit(:translated_text,:original_text)
 	 end
-
-
-
 end
