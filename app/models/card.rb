@@ -5,10 +5,9 @@ class Card < ActiveRecord::Base
 	validate :text_not_equal_translation
 
 	def add_review_date
-		if review_date.nil?
-			self.review_date = 3.days.from_now
-		end
-		# Time.now.strftime("%d+3/%m/%Y")
+		
+			self.review_date ||= 3.days.from_now
+			
 	end
 
 	def text_not_equal_translation
