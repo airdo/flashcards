@@ -1,5 +1,4 @@
 class CardsControllerController < ApplicationController
-	require 'open-uri'
 	
 	def index
 		@cards = Card.all
