@@ -1,0 +1,11 @@
+<div class="container">
+<h2>New Card</h2>
+<div class="new_card col-sm-4 col-sm-offset-4">
+<%= simple_form_for :card, url: cards_controller_index_path do |card| %>
+    <%= card.input :original_text, placeholder: 'Текст для изучения' %>
+    <%= card.input :translated_text, placeholder: 'Перевод' %>
+    <%= card.button :submit %>
+<% end %>
+</div>
+
+</div>

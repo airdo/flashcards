@@ -1,0 +1,15 @@
+<div class="container">
+<div class="row">
+	<div class="col-sm-4 col-sm-offset-4">
+		<h2 class="text-center"><%= @card.original_text %></h2><br/>
+		<h4 class="text-center"><%= @card.translated_text %></h4>
+		<p class="text-center"><%= @card.review_date %></p>
+		<div class="row">
+			<div class="col-sm-6 text-center"><%= link_to 'Delete', cards_controller_url(@card.id), :method => :delete %></div>
+			<div class="col-sm-6 text-center"><%= link_to 'Edit', edit_cards_controller_path(@card.id) %></div>
+		</div>
+		
+	</div>
+</div>
+</div>
+
