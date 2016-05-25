@@ -9,7 +9,7 @@
 
 
 require 'open-uri'
-
+p 'Parsing started'
 doc=Nokogiri::HTML(open('http://www.101languages.net/russian/russian-word-list/'))
 
 @words  = doc.css("tr[dir='ltr']").map { |wrd|
@@ -20,7 +20,9 @@ doc=Nokogiri::HTML(open('http://www.101languages.net/russian/russian-word-list/'
   translated_text: translated_text
  }
 }
-
+p 'Sending data to table'
 @words.each do |word|
   Card.create( original_text: word[:original_text], translated_text: word[:translated_text])
 end
+len = @words.length 
+p 'Done! Words sent: '+len.to_s
