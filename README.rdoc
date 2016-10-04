@@ -1,1 +1,2 @@
-flashcards app
+CRUD web-app based on flashcard mechanic.
+You can add cards to learn, delay or delete already learned.
